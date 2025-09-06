@@ -16,7 +16,7 @@ cd acad-vali/<br>
 cd backend <br>
 npm install <br>
 
-3.Install frontend dependencies: <br>
+3. Install frontend dependencies: <br>
 cd frontend\validator-frontend <br>
 npm install <br>
 
