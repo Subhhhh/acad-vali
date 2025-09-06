@@ -1,5 +1,5 @@
 // services/ocrService.js
-const OcrResult = require('../models/OcrResult');
+const OcrResult = require('../models/ocr-results');
 
 // Placeholder OCR processing — replace with real OCR API integration
 async function processOcr(cert_id, filePath) {
