@@ -4,6 +4,7 @@ Before running this project, install(if haven't already):
 - [Node.js (LTS)](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/download/win)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [MongoDB](https://www.mongodb.com/try/download/community)
 ---
 ##Installation
 
@@ -17,7 +18,7 @@ cd backend <br>
 npm install <br>
 
 3. Install frontend dependencies: <br>
-cd frontend\validator-frontend <br>
+cd frontend <br>
 npm install <br>
 
 ##Running the code:
