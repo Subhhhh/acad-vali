@@ -1,28 +1,18 @@
+// routes/admin.js
 const express = require('express');
-const pool = require('../../db/db'); 
-
 const router = express.Router();
+const asyncHandler = require('../utils/asyncHandler');
+const { requireAuth } = require('../middleware/auth');
+const {
+  getReports,
+  addToBlacklist,
+  removeFromBlacklist,
+  listBlacklist
+} = require('../controllers/adminController');
 
-router.get('/reports', async (req, res) => {
-  try {
-    const reports = await pool.query('SELECT * FROM certificates');
-    res.json(reports.rows);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch reports' });
-  }
-});
-
-router.post('/blacklist', async (req, res) => {
-  const { cert_id, reason } = req.body;
-  try {
-    await pool.query(
-      'INSERT INTO blacklist (cert_id, reason) VALUES ($1, $2)',
-      [cert_id, reason]
-    );
-    res.json({ message: 'Certificate blacklisted' });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to blacklist' });
-  }
-});
+router.get('/reports', requireAuth('admin'), asyncHandler(getReports));
+router.post('/blacklist', requireAuth('admin'), asyncHandler(addToBlacklist));
+router.delete('/blacklist/:cert_id', requireAuth('admin'), asyncHandler(removeFromBlacklist));
+router.get('/blacklist', requireAuth('admin'), asyncHandler(listBlacklist));
 
 module.exports = router;

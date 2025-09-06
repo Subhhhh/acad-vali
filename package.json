@@ -1,0 +1,24 @@
+{
+  "name": "authenticity-validator",
+  "version": "1.0.0",
+  "description": "Before running this project, install(if haven't already): - [Node.js (LTS)](https://nodejs.org/en/download/) - [Git](https://git-scm.com/download/win) - [Visual Studio Code](https://code.visualstudio.com/) --- ##Installation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Subhhhh/acad-vali.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Subhhhh/acad-vali/issues"
+  },
+  "homepage": "https://github.com/Subhhhh/acad-vali#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "mongoose": "^8.18.0"
+  }
+}
